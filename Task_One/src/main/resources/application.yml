@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///Wqlove?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: Wql20010520
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  main:
+    banner-mode: off
+
+mybatis-plus:
+  type-aliases-package: com.wql.domain
+  mapper-locations: com/wql/dao/*Dao.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    banner: false
+    db-config:
+      id-type: none
+      logic-delete-field: deleted
+      logic-not-delete-value: 0
+      logic-delete-value: 1
